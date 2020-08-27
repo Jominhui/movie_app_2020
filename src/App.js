@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from "prop-types";
 
-const Rapper = ({name , picture, rating}) =>{
+/*예제 noamd coders #0 ~ #2*/
+/*const Rapper = ({name , picture, rating}) =>{
   return ( 
     <div>
       <h1>I like {name}</h1>
@@ -36,13 +37,13 @@ const Rapper_like = [
     image: "https://search.pstatic.net/common/?src=http%3A%2F%2Fpost.phinf.naver.net%2FMjAxODA2MjBfOTIg%2FMDAxNTI5NDc5OTAzMzAz.32byngeOTUceAUn1nU2hTEGm-LnpgDg2Ghf9Vv9V3aYg.IfbMY-RVKWhDYvikfIlg5objrbu_mrJ7r2OqhSbNPkwg.JPEG%2FIvaYHws37sfKbGlwW3jzm_ckcrNA.jpg&type=sc960_832",
     rating: 4.8
   }
-];
+];*/
 
 /*const renderRapper = (rap) =>{
   return <Rapper name={rap.name} picture={rap.image} />
 }*/
 
-function App() {
+/*function App() {
   return( 
     <div>
       {Rapper_like.map(rap => (
@@ -50,6 +51,30 @@ function App() {
       ))}
     </div>
     );
+}*/
+
+class App extends React.Component{
+  state = {
+    count: 0
+  };
+
+  add = () => {
+    console.log("add");
+  };
+
+  minus = () => {
+    console.log("minus");
+  };
+  
+  render(){
+    return (
+      <div>
+        <h1>the number is {this.state.count}</h1>
+        <button onClick={this.add}>Add</button>
+        <button onClick={this.minus}>Minus</button>
+      </div>
+    );
+  }
 }
 
 export default App;
