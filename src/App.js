@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import axios from "axios";
 
 /*예제 noamd coders #0 ~ #2*/
-/*const Rapper = ({name , picture, rating}) =>{
+/*const Rapper = ({name , picture, rating}) =>{ 
   return ( 
     <div>
       <h1>I like {name}</h1>
@@ -53,7 +54,8 @@ const Rapper_like = [
     );
 }*/
 
-class App extends React.Component{
+/*예제 nomad coders #3-1 ~ #3-2*/
+/*class App extends React.Component{
   state = {
     count: 0
   };
@@ -88,6 +90,31 @@ class App extends React.Component{
         <button onClick={this.add}>Add</button>
         <button onClick={this.minus}>Minus</button>
       </div>
+    );
+  }
+}*/
+
+class App extends React.Component {
+  state = {
+    isLoading: true,
+    movies: []
+  };
+
+  getMovies = async () => {
+    const movies = await axios.get("https://yts-proxy.now.sh/list_movies.json");  
+  }
+
+  componentDidMount(){
+    /*setTimeout(() => {
+      this.setState({ isLoading: false});
+    }, 6000);*/
+    this.getMovies();
+  }
+
+  render () {
+    const { isLoading } = this.state;
+    return (
+      <div>{isLoading ? "Loading..." : "We are ready"}</div>
     );
   }
 }
