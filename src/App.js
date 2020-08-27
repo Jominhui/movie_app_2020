@@ -1,11 +1,17 @@
 import React from 'react';
-import Potato from './Potato';
+
+const Rapper = ({fav}) =>{
+return <h1>I like {fav}</h1>;
+}
 
 function App() {
   return( 
     <div>
       <h1>Hello!</h1>
-      <Potato />
+      <Rapper fav="Ash Island" />
+      <Rapper fav="Hash Swan" />
+      <Rapper fav="ChangMo" />
+      <Rapper fav="Haon" />
     </div>
     );
 }
