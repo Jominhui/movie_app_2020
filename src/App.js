@@ -4,7 +4,7 @@ const Rapper = ({name , picture}) =>{
   return ( 
     <div>
       <h1>I like {name}</h1>
-      <img src={picture} />
+      <img src={picture} alt={name}/>
     </div>
   );
 }
@@ -27,15 +27,16 @@ const Rapper_like = [
   }
 ];
 
-const renderRapper = (rap) =>{
+/*const renderRapper = (rap) =>{
   return <Rapper name={rap.name} picture={rap.image} />
-}
-
+}*/
 
 function App() {
   return( 
     <div>
-      {Rapper_like.map(renderRapper)}
+      {Rapper_like.map(rap => (
+        <Rapper key={rap.id} name={rap.name} picture={rap.image} />
+      ))}
     </div>
     );
 }
