@@ -1,8 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Movie.css";
 
-const Movie = ({id, yaer, title, summary, poster}) =>{
-return <h1>{title}</h1>
+const Movie = ({year, title, summary, poster}) =>{
+return (
+    <div class="movie">
+        <img src={poster} alt={title} title={title} />
+        <div class="movie_data">
+            <h3 class="movie_title">{title}</h3>
+            <h3 class="movie_year">{year}</h3>
+            <h3 class="movie_summary">{summary}</h3>
+        </div>
+    </div>
+)
 }
 
 Movie.propTypes = {
