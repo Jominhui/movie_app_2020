@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from "prop-types";
 import axios from "axios";
 import Movie from "./Movie";
 import "./App.css";
@@ -123,7 +122,7 @@ class App extends React.Component {
             <span className="loader_text">Loading...</span>
           </div>
         ) : (
-          <div className="movie">
+          <div className="movies">
             {movies.map( movie => (
               <Movie 
                 key={movie.id} 

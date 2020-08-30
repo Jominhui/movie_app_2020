@@ -8,13 +8,13 @@ return (
         <img src={poster} alt={title} title={title} />
         <div className="movie_data">
             <h3 className="movie_title">{title}</h3>
-            <ul className="genres">
+            <h5 className="movie_year">{year}</h5>
+            <ul className="movie_genres">
                 {genres.map((genre, index) => (
                     <li key={index} className="genres_genre">{genre}</li>
                 ))}
             </ul>
-            <h5 className="movie_year">{year}</h5>
-            <p className="movie_summary">{summary}</p>
+            <p className="movie_summary">{summary.slice(0, 180)}...</p>
         </div>
     </div>
 )
